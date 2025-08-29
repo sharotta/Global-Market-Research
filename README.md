@@ -31,11 +31,10 @@ This dataset captures global sales and marketing data across multiple product ca
 - Removed blank rows and verified data types
 - Date column was changed to a proper dd/mm/yyyy format
 - Standardized Product Category entries using PROPER() and TRIM() functions
-- Created reference table for countries and region and misclassified country and region is fixed with a mapping table XLOOKUP
+- Created reference table for countries and regions, and misclassified country and regions were fixed with a mapping table XLOOKUP
 - Missing Revenue was replaced with average revenue for that product category using AVERAGEIFS
 - Missing Brand was replaced with mode using helper table and INDEX-MATCH
 - Standardized "Usa" to "USA" using UPPER function
-- Created reference table for countries and region and misclassified country and region is fixed with a mapping table XLOOKUP
 - Check for Duplicate Order IDs using =COUNTIF(A:A, A2) → Filter for results > 1
 
 2. Feedback Data
@@ -50,12 +49,14 @@ This dataset captures global sales and marketing data across multiple product ca
 - Added to Power Pivot and linked to Sales_Data and Feedback_Data
 
 4. Product Dimension Table
-- Cleaned Product Category names Standardize categorical values (e.g., strip white spaces in "Product Category")
+- Cleaned Product Category names, standardize categorical values (e.g., strip white spaces in "Product Category")
 - Verified Product ID as unique (primary key)
 - Used as a lookup table to enrich Feedback_Data
 - Product Category mismatch- Cleaned with TRIM, PROPER, I also removed Duplicates.
 
 ## Data Modeling in Excel (Power Pivot) 
+<img width="1294" height="660" alt="Modelling" src="https://github.com/user-attachments/assets/53d7e3fb-6d17-4e92-83a1-28ccbd719316" />
+
 The following relationships were successfully created: 
 - Feedback_Data ↔ Product_Dim → via Product ID 
 - Feedback_Data ↔ Customer_Dim → via Customer ID 
@@ -73,8 +74,8 @@ This project culminates in a two-page interactive Dashboard built in Excel, desi
 <img width="1077" height="488" alt="Dashboard 1" src="https://github.com/user-attachments/assets/607a837b-85cb-420e-b866-c25757695bd4" />
 
 ### Key Insights
-1. Regional Performance: North America is the undisputed revenue leader, generating $90,020—commanding the largest market share. In stark contrast, Europe is the lowest-performing region, contributing only $11,100.
-2. Product Category Analysis: Electronics is the top-performing category ($34,735), followed by Home Appliances ($33,096). However, a critical issue exists: the Clothing category has both the lowest revenue ($27,995) and the lowest customer satisfaction rating (2.71)
+1. Regional Performance: North America is the undisputed revenue leader, generating $90,020 and commanding the largest market share. In stark contrast, Europe is the lowest-performing region, contributing only $11,100.
+2. Product Category Analysis: Electronics is the top-performing category ($34,735), followed by Home Appliances ($33,096). However, a critical issue exists: the Clothing category has both the lowest revenue ($27,995).
 3. Monthly Trends: Revenue peaked in August at $17,547 after a climb from a February low of $13,734. However, this was followed by a significant downturn throughout Q3, falling through October.
 4. Customer Segmentation: The Adult demographic is your core customer base, dominating both revenue ($57,629) and quantity purchased (592 units).
 
@@ -82,9 +83,9 @@ This project culminates in a two-page interactive Dashboard built in Excel, desi
 1. Double down on successful strategies in North America. Analyze the marketing, product mix, and customer engagement tactics that drive success here and document them as best practices.
 2. Launch a focused review of European operations. Investigate potential causes for low sales: logistics, marketing relevance, local competition, or product-market fit. Consider a targeted campaign or local partnership to stimulate growth.
 3. Leverage winning categories. Feature Electronics and Home Appliances more prominently in marketing campaigns and ensure optimal stock levels.
-4. Initiate an urgent turnaround project for Clothing. This dual threat of low sales and low satisfaction signals a failing product line or poor customer experience. Immediately gather customer feedback, review quality, sizing, and marketing, and consider a strategic reboot or discontinuation.
+4. Initiate an urgent turnaround project for Clothing. This threat of low sales signals a failing product line or poor customer experience. Immediately gather customer feedback, review quality, sizing, and marketing, and consider a strategic reboot or discontinuation.
 5. Analyze the Q3 drop. Investigate external factors (e.g., back-to-school shifts, competitor activity) and internal factors (e.g., inventory stockouts, reduced ad spend) that caused the post-peak decline.
-6. Plan for next year’s cycle. Use this trend to forecast more accurately. Budget for increased marketing spend in Q2 to fuel the summer peak and develop strategies to maintain momentum through Q3.
+6. Plan for next year’s cycle by using trend to forecast more accurately. Budget for increased marketing spend in Q2 to fuel the summer peak and develop strategies to maintain momentum through Q3.
 7. Allocate the majority of marketing resources toward acquiring and retaining Adult customers. Develop loyalty programs, personalized marketing, and new product offerings tailored to this segment's preferences.
 8. Conduct research to understand why Seniors and Youth underperform. There may be untapped potential with tailored messaging or product adjustments.
 
